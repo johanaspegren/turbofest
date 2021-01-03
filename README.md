@@ -1,2 +1,2 @@
 # turbofest
-Powershell script for generating Turbofest powerpoint showa
+Powershell script for generating Turbofest powerpoint shows
