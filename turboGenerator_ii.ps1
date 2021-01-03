@@ -1,8 +1,11 @@
-﻿
-# start of with the right language
-Set-Culture -CultureInfo se-SV
+﻿# start of with the right language
+Set-Culture -CultureInfo sv-SE
+
+# use the directory where script is placed
+$scriptpath = $MyInvocation.MyCommand.Path
+$dir = Split-Path $scriptpath
 # set root for all needed resource documents
-$PARTY_ROOT = "C:\Users\...\Documents\turbofest\stage\"
+$PARTY_ROOT = $dir + "\"
 # make sure that there is a mall.pptx, bilder and sounds in the folder
 
 Add-type -AssemblyName office
@@ -28,7 +31,7 @@ $date = Get-Date -Year $targetYear -Month 1 -Day 1
 $numberOfDays = (Get-Date -Year $targetYear -Month 12 -Day 31).DayOfYear # 365 or 366 days
 
 # debug keep to 5
-$numberOfDays = 200
+# $numberOfDays = 2
 
 # make sure there are slides enough
 While($presentation.Slides.Count -lt $numberOfDays) {
